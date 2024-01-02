@@ -1,6 +1,6 @@
 import './Reservations.css';
 import React from 'react';
-import Card from 'src/App/Card.js';
+import Card from './Card.js';
 
 const Reservations = ( { reservations } ) => {
   console.log("Reservations:", reservations);

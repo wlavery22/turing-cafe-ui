@@ -1,10 +1,9 @@
 import './App.css';
 import React from 'react';
 import { useState } from "react";
-import Reservations from "src/App/Reservations.js";
+import Reservations from "./Reservations.js";
 
 function App() {
-  // const dummyData = [{array of objects}] 
   const [reservations, setReservations] = useState([]);
 
   return (

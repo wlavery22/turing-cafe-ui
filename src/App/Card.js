@@ -1,11 +1,15 @@
 import './Card.css'
 
-const Card = () => {
+const Card = ({ id, name, date, time, number }) => {
   return (
     <div className='card'>
-      <h3>Card!</h3>
+      <p>{name}</p>
+      <p>{date}</p>
+      <p>{time}</p>
+      <p>{number}</p>
     </div>
   )
 }
 
 export default Card
+
