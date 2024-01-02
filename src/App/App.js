@@ -3,9 +3,7 @@ import React from 'react';
 import { useState } from "react";
 import Reservations from "src/App/Reservations.js";
 
-
 function App() {
-
   // const dummyData = [{array of objects}] 
   const [reservations, setReservations] = useState([]);
 
@@ -15,7 +13,7 @@ function App() {
       <div className='resy-form'>
       </div>
       <div className='resy-container'>
-        <Reservations />
+        <Reservations reservations={reservations}/>
       </div>
     </div>
   );
