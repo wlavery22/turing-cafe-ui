@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 import { useState } from "react";
+import Reservations from "src/App/Reservations.js";
+
 
 function App() {
 
@@ -13,6 +15,7 @@ function App() {
       <div className='resy-form'>
       </div>
       <div className='resy-container'>
+        <Reservations />
       </div>
     </div>
   );
