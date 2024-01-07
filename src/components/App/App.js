@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import { useState, useEffect } from "react";
-import Reservations from "./Reservations.js";
-import getAllReservations from "../apiCall.js"
+import Reservations from "../Reservations/Reservations.js";
+import getAllReservations from "../../apiCall.js"
 
 function App() {
   const [reservations, setReservations] = useState([]);
