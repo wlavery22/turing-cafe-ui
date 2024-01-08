@@ -2,7 +2,9 @@ import './App.css';
 import React from 'react';
 import { useState, useEffect } from "react";
 import Reservations from "../Reservations/Reservations.js";
-import getAllReservations from "../../apiCall.js"
+import Form from "../Form/Form.js";
+
+// import getAllReservations from "../../apiCall.js"
 
 function App() {
   const [reservations, setReservations] = useState([]);
@@ -25,10 +27,16 @@ function App() {
 	  getAllReservations()
   }, []);
 
+  const addReservation = (newReservation) => {
+    console.log("newReservation:", newReservation);
+    setReservations([...reservations, newReservation]) //newReservation is from Form.js
+    }
+
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
+        <Form addReservation={addReservation}/>
       </div>
       <div className='resy-container'>
         <Reservations reservations={reservations}/>
