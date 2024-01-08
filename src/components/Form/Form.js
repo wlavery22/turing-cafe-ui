@@ -1,11 +1,34 @@
 import './Form.css'
 import {  useState } from 'react'
 
-function Form(){
+function Form( {addReservation} ) {
   const [firstName, setFirstName]  = useState("")
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [number, setNumber] = useState(0);
+
+  function submitReservations(event) {
+    event.preventDefault()
+  
+    const newReservation = {
+      id: Date.now(), 
+      name: firstName,
+      date: date,
+      time: time,
+      number: number,
+      key: Date.now()
+    };
+
+    addReservation(newReservation)
+      clearInput() 
+  }
+
+  function clearInput() {
+    setFirstName("")
+    setDate("")
+    setTime("")
+    setNumber(0)
+  }
 
   return (
     <form> 
@@ -16,7 +39,7 @@ function Form(){
         value={firstName}
         onChange={event => setFirstName(event.target.value)}
       />
-      <button>SUBMIT NAME</button> 
+      <button onClick = {event => submitReservations(event)}>SUBMIT NAME</button>
 
       <input
         type='text'
@@ -25,7 +48,7 @@ function Form(){
         value={date} 
         onChange={event => setDate(event.target.value)}
       />
-      <button>SUBMIT DATE</button> 
+      <button onClick = {event => submitReservations(event)}>SUBMIT DATE</button>
 
       <input
         type='text'
@@ -33,8 +56,8 @@ function Form(){
         name='time' 
         value={time} 
         onChange={event => setTime(event.target.value)}
-      />
-      <button>SUBMIT TIME</button>   
+      /> 
+      <button onClick = {event => submitReservations(event)}>SUBMIT TIME</button>
 
       <input
         type='number'
@@ -43,9 +66,9 @@ function Form(){
         value={number} 
         onChange={event => setNumber(event.target.value)}
       />
-      <button>SUBMIT NUMBER</button>
+      <button onClick = {event => submitReservations(event)}>SUBMIT NUMBER</button>
     </form> 
   )
 }
 
-export default Form;
+export default Form
