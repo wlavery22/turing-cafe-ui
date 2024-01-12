@@ -30,18 +30,7 @@ describe("Visit the homepage", () => {
     cy.get('input[name="date"]').type("4/5").should('have.value', '4/5')
     cy.get('input[name="time"]').type("7:00").should('have.value', '7:00')
     cy.get('input[name="number"]').type("2").should('have.value', '02')
-  })
-  // it('should add a new reservation to the page when a user fills out the form and clicks the Submit button', () => {
-  //   cy.get('input[name="firstName"]').type("Leta")
-  //   cy.get('input[name="date"]').type("4/5")
-  //   cy.get('input[name="time"]').type("7:00")
-  //   cy.get('input[name="number"]').type("2")
-  //   cy.get('.reservation').click()
-  //   cy.get('.card').last().get(".number").contains("2")
-  //   cy.get('.card').last().contains("Leta")
-  //   cy.get('.card').last().contains("4/5")
-  //   cy.get('.card').last().contains("7:00")
-  //   });  
+    })
   })
 
 describe("Make a reservation", () => {
@@ -55,7 +44,7 @@ describe("Make a reservation", () => {
       fixture: "reservations.json",
     })
       cy.visit("http://localhost:3000");
-    });
+  });
 
   it('should add a new reservation to the page when a user fills out the form and clicks the Submit button', () => {
     cy.get('input[name="firstName"]').type("Leta")
@@ -76,18 +65,5 @@ describe("Make a reservation", () => {
     cy.get('.card').last().contains("Leta")
     cy.get('.card').last().contains("4/5")
     cy.get('.card').last().contains("7:00")
-  });  
-
+    });  
   })
-
-// })
-
-
- 
-
-
-// describe('empty spec', () => {
-//   it('passes', () => {
-//     cy.visit('https://example.cypress.io')
-//   })
-// })

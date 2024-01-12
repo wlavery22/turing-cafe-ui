@@ -3,14 +3,9 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import Reservations from "../Reservations/Reservations.js";
 import Form from "../Form/Form.js";
-// import getAllReservations from "../../apiCall.js"
 
 function App() {
   const [reservations, setReservations] = useState([]);
-
-  // window.onload = (event) => {
-  //   getAllReservations();
-  // };
 
   const getAllReservations = () => {
 	return fetch("http://localhost:3001/api/v1/reservations") 
@@ -46,10 +41,6 @@ function App() {
       .then(json => console.log(json))
       .catch(error => console.log(error.message));
   }
-
-    // POST: "http://localhost:3001/api/v1/reservations"
-    // {name: <String>, date: <String>, time: <String>, number: <Number>}
-    // New reservation: { id: 18939837, name: 'Leta', date: '12/3', time: '6:30', number: 2 }
 
   return (
     <div className="App">
