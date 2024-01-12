@@ -39,7 +39,6 @@ function Form( {addReservation} ) {
         value={firstName}
         onChange={event => setFirstName(event.target.value)}
       />
-      <button onClick = {event => submitReservations(event)}>SUBMIT NAME</button>
 
       <input
         type='text'
@@ -48,7 +47,6 @@ function Form( {addReservation} ) {
         value={date} 
         onChange={event => setDate(event.target.value)}
       />
-      <button onClick = {event => submitReservations(event)}>SUBMIT DATE</button>
 
       <input
         type='text'
@@ -57,7 +55,6 @@ function Form( {addReservation} ) {
         value={time} 
         onChange={event => setTime(event.target.value)}
       /> 
-      <button onClick = {event => submitReservations(event)}>SUBMIT TIME</button>
 
       <input
         type='number'
@@ -66,7 +63,7 @@ function Form( {addReservation} ) {
         value={number} 
         onChange={event => setNumber(event.target.value)}
       />
-      <button onClick = {event => submitReservations(event)}>SUBMIT NUMBER</button>
+      <button className="reservation" onClick = {event => submitReservations(event)}>SUBMIT RESERVATION</button>
     </form> 
   )
 }

@@ -3,10 +3,10 @@ import './Card.css'
 const Card = ({ id, name, date, time, number }) => {
   return (
     <div className='card'>
-      <p>{name}</p>
+      <p className='name'>{name}</p>
       <p>{date}</p>
       <p>{time}</p>
-      <p>{number}</p>
+      <p className='number'>{number}</p>
       <button>Cancel</button>
     </div>
   )
